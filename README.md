@@ -5,6 +5,20 @@ This implementation of Flux Fill + ControlNet Inpaint combines the fill-style ma
 
 While FLUX.1-Fill-dev is designed for mask-based edits, it was not originally trained to operate jointly with ControlNet. In practice, this combined setup works well for structured inpainting tasks, though results may vary depending on the conditioning strength and the alignment between the mask and the control input.
 
+## Diffusers Community Pipeline
+
+This project is implemented as a **Hugging Face Diffusers community pipeline** for combining **FLUX Fill** with **ControlNet-based inpainting**. It extends the original FLUX fill pipeline by integrating ControlNet conditioning, enabling more structured and controllable masked edits using inputs such as depth, canny edges, or pose.
+
+The implementation follows the community pipeline approach from Diffusers, where custom pipelines can be added separately and loaded using the `custom_pipeline` interface without modifying the core library. 
+
+### Original Community Pipeline
+- https://github.com/huggingface/diffusers/blob/main/examples/community/pipline_flux_fill_controlnet_Inpaint.py
+
+### Related Documentation
+- Community Pipelines README: https://github.com/huggingface/diffusers/tree/main/examples/community#flux-fill-controlnet-pipeline
+- FLUX Pipelines: https://huggingface.co/docs/diffusers/api/pipelines/flux
+- ControlNet in Diffusers: https://huggingface.co/docs/diffusers/api/pipelines/controlnet_flux
+
 ## Example Usage
 
 
